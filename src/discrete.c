@@ -131,8 +131,4 @@ void main(int argc, char *argv[])
 	int *ext_euc_res;
 	ext_euc_res = extended_euclid(a, b);
 	printf("Extended Euclid:\t%d\t%d\t%d\n a*x + b*y = %d*%d + %d*%d = %d\n", ext_euc_res[0], ext_euc_res[1], ext_euc_res[2], b, ext_euc_res[0], a, ext_euc_res[1], b*ext_euc_res[0] + a*ext_euc_res[1]);
-
-
-	
-
 }
