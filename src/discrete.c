@@ -10,6 +10,7 @@ int *extended_euclid(int a, int b);
 int modular_exp(int base, int power, int modulus);
 int modular_inverse(int a, const int modulus);
 int linear_congruence(int a, int b, const int modulus);
+bool eulers_criterion(const int n, const int prime)
 //int square_root(int base, int modulus);
 //int test_primal(int p_candidate);
 
@@ -102,6 +103,13 @@ int modular_exp(const int base, const int exponent, const int modulus) // Using 
 		z = (z*z) % modulus;
 	}
 	return result;
+}
+
+bool eulers_criterion(const int n, const int prime)
+{
+	int res = modular_exp(n, (prime-1)/2, prime);
+	if (res == 1) { return 1;}
+	else { return 0;}
 }
 
 void main(int argc, char *argv[]) 
